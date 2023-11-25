@@ -1,15 +1,13 @@
+import { useSelector } from "react-redux";
 import TodoItem from "./TodoItem";
-export default function TodoList({ todos, removeTodo, handleComplete }) {
+const TodoList = () => {
+  const todos = useSelector((state) => state.todos.todos);
   return (
     <ul>
       {todos.map((item) => (
-        <TodoItem
-          key={item.id}
-          removeTodo={removeTodo}
-          handleComplete={handleComplete}
-          {...item}
-        />
+        <TodoItem key={item.id} {...item} />
       ))}
     </ul>
   );
-}
+};
+export default TodoList;

@@ -1,8 +1,8 @@
-export default function InputField({ text, setText, addTodo }) {
+export default function InputField({ text, handleInput, handleSubmit }) {
   return (
     <label>
-      <input value={text} onChange={(e) => addTodo(e.target.value)} />
-      <button onClick={setText}>Add Todo</button>
+      <input value={text} onChange={(e) => handleInput(e.target.value)} />
+      <button onClick={handleSubmit}>Add Todo</button>
     </label>
   );
 }
